@@ -1,0 +1,20 @@
+## `pnpm exec` instead of `npx` does not work
+npx wrangler d1 execute DB  --local --file=./schema.sql 
+
+## Above command did not work as it could not find ./schema.sql even though ls could find it
+##
+
+## following command was use to create Customer
+npx wrangler d1 execute DB  --local --command "CREATE TABLE IF NOT EXISTS Customers (CustomerId INTEGER PRIMARY KEY, CompanyName TEXT, ContactName TEXT);"
+
+## following command was use to insert Customer
+npx wrangler d1 execute DB  --local --command "INSERT INTO Customers (CustomerId, CompanyName, ContactName) VALUES (1, 'Alfreds Futterkiste', 'Maria Anders');
+
+## following command was use to select Customer
+npx wrangler d1 execute DB  --local --command "SELECT * FROM Customers;
+
+## following command was use to delete Customer
+npx wrangler d1 execute DB  --local --command "DELETE FROM Customers WHERE CustomerId = 1;
+
+## following command was use to update Customer
+npx wrangler d1 execute DB  --local --command "UPDATE Customers SET CompanyName = 'Muve Solutions' WHERE CustomerId = 1;
